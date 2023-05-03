@@ -9,5 +9,12 @@ app.debug = True #Change this to False for production
 def home():
     return render_template('home.html')
 
+@app.route('/mark')
+def markHTML():
+    mark = ""
+    mark = mark + Markup("<h2>Div 1</h2> \n<p>The contents of this div have been changed</p>")
+    return mark
+
+
 if __name__ == '__main__':
     app.run()
